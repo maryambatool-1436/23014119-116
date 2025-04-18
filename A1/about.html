@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - PaperCraft</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./about.css">
+</head>
+<body>
+    <!-- Header with Hamburger Menu -->
+    <header>
+        <div class="container">
+            <div class="flex justify-between items-center py-6">
+                <div class="logo">
+                    PaperCraft
+                </div>
+                
+                <!-- Mobile Menu Toggle -->
+                <input type="checkbox" id="menu-toggle" class="hidden">
+                <label for="menu-toggle" class="hamburger sm:hidden">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                
+                <!-- Desktop Navigation Menu -->
+                <nav class="desktop-nav">
+                    <div class="flex space-x-6">
+                        <a href="./index.html" class="nav-link">Home</a>
+                        <a href="./products.html" class="nav-link">Products</a>
+                        <a href="./about.html" class="nav-link active">About</a>
+                        <a href="./contact.html" class="nav-link">Contact</a>
+                        <a href="./cart.html" class="nav-link">Cart</a>
+                    </div>
+                </nav>
+                
+                <!-- Mobile Menu (Expanded) -->
+                <div class="mobile-menu">
+                    <div class="container">
+                        <nav class="mobile-nav space-y-6">
+                            <a href="./index.html" class="nav-link">Home</a>
+                            <a href="./products.html" class="nav-link">Products</a>
+                            <a href="./about.html" class="nav-link active">About</a>
+                            <a href="./contact.html" class="nav-link">Contact</a>
+                            <a href="./cart.html" class="nav-link">Cart</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Hero -->
+    <section class="about-hero gray-bg-light py-12 md:py-20">
+        <div class="container">
+            <div class="about-hero-content">
+                <h1 class="about-hero-title">Our Story</h1>
+                <p class="about-hero-text">
+                    Founded in 2015, PaperCraft was born from a passion for high-quality stationery and a belief that the right tools can inspire creativity and productivity.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Mission -->
+    <section class="mission py-12 md:py-16">
+        <div class="container">
+            <div class="mission-content">
+                <div class="mission-image">
+                    <img src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Our workspace" class="rounded-lg shadow">
+                </div>
+                <div class="mission-text">
+                    <h2 class="mb-6">Our Mission</h2>
+                    <p class="text-gray mb-4">
+                        At PaperCraft, we believe that quality stationery can enhance your creativity, productivity, and joy in everyday life. Our mission is to provide premium writing and desk accessories that inspire and delight.
+                    </p>
+                    <p class="text-gray">
+                        We carefully source materials from sustainable suppliers and work with skilled craftspeople to create products that are both beautiful and functional. Every item in our collection is designed to bring a touch of elegance to your workspace.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values -->
+    <section class="values gray-bg-light py-12 md:py-16">
+        <div class="container">
+            <h2 class="text-center mb-12">Our Values</h2>
+            <div class="values-grid">
+                <!-- Value 1 -->
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="value-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <h3 class="value-title">Quality</h3>
+                    <p class="value-text">
+                        We never compromise on quality. Each product is carefully crafted using premium materials and undergoes rigorous testing.
+                    </p>
+                </div>
+                
+                <!-- Value 2 -->
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="value-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
+                        </svg>
+                    </div>
+                    <h3 class="value-title">Sustainability</h3>
+                    <p class="value-text">
+                        We're committed to sustainable practices, from responsibly sourced materials to eco-friendly packaging.
+                    </p>
+                </div>
+                
+                <!-- Value 3 -->
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="value-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                        </svg>
+                    </div>
+                    <h3 class="value-title">Innovation</h3>
+                    <p class="value-text">
+                        We constantly explore new designs, materials, and techniques to create stationery that meets modern needs while honoring traditional craftsmanship.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team -->
+    <section class="team py-12 md:py-16">
+        <div class="container">
+            <h2 class="text-center mb-12">Meet Our Team</h2>
+            <div class="team-grid">
+                <!-- Team Member 1 -->
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Sarah Johnson" class="team-img">
+                    <h3 class="team-name">Sarah Johnson</h3>
+                    <p class="team-role">Founder & CEO</p>
+                    <p class="team-bio">
+                        With a background in design, Sarah founded PaperCraft to share her love for beautiful stationery.
+                    </p>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="David Chen" class="team-img">
+                    <h3 class="team-name">David Chen</h3>
+                    <p class="team-role">Creative Director</p>
+                    <p class="team-bio">
+                        David oversees product design and ensures every item meets our high aesthetic standards.
+                    </p>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Emily Rodriguez" class="team-img">
+                    <h3 class="team-name">Emily Rodriguez</h3>
+                    <p class="team-role">Product Manager</p>
+                    <p class="team-bio">
+                        Emily works with suppliers and craftspeople to bring our designs to life with the highest quality.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8">
+        <div class="container">
+            <div class="grid md:grid-cols-4">
+                <div class="mb-8 md:mb-0">
+                    <h3 class="footer-heading">PaperCraft</h3>
+                    <p class="text-gray">Premium stationery for creative minds.</p>
+                </div>
+                <div class="mb-8 md:mb-0">
+                    <h3 class="footer-heading">Shop</h3>
+                    <ul class="space-y-2">
+                        <li><a href="./products.html" class="footer-link">Notebooks</a></li>
+                        <li><a href="./products.html" class="footer-link">Pens & Pencils</a></li>
+                        <li><a href="./products.html" class="footer-link">Desk Accessories</a></li>
+                        <li><a href="./products.html" class="footer-link">Planners</a></li>
+                    </ul>
+                </div>
+                <div class="mb-8 md:mb-0">
+                    <h3 class="footer-heading">Company</h3>
+                    <ul class="space-y-2">
+                        <li><a href="./about.html" class="footer-link">About Us</a></li>
+                        <li><a href="./contact.html" class="footer-link">Contact</a></li>
+                        <li><a href="#" class="footer-link">Shipping</a></li>
+                        <li><a href="#" class="footer-link">Returns</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-heading">Connect</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="footer-link">Instagram</a></li>
+                        <li><a href="#" class="footer-link">Twitter</a></li>
+                        <li><a href="#" class="footer-link">Facebook</a></li>
+                        <li><a href="#" class="footer-link">Pinterest</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t mt-8 pt-8 text-center text-gray">
+                <p>&copy; 2025 PaperCraft. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

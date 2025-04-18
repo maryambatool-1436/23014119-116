@@ -1,0 +1,133 @@
+/* About page specific styles */
+.about-hero-content {
+  max-width: 48rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.about-hero-text {
+  font-size: 1.25rem;
+  color: #6b7280;
+}
+
+.mission-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.mission-image {
+  width: 100%;
+}
+
+.mission-image img {
+  width: 100%;
+  height: auto;
+}
+
+.mission-text {
+  width: 100%;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.value-card {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+
+.value-icon {
+  width: 4rem;
+  height: 4rem;
+  background-color: #4f46e5;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+.value-svg {
+  width: 2rem;
+  height: 2rem;
+  color: white;
+}
+
+.value-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.value-text {
+  color: #6b7280;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.team-member {
+  text-align: center;
+}
+
+.team-img {
+  width: 10rem;
+  height: 10rem;
+  object-fit: cover;
+  border-radius: 9999px;
+  margin: 0 auto 1rem;
+}
+
+.team-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.team-role {
+  color: #4f46e5;
+  margin-bottom: 0.5rem;
+}
+
+.team-bio {
+  color: #6b7280;
+  max-width: 20rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .mission-content {
+    flex-direction: row;
+  }
+  
+  .mission-image {
+    width: 50%;
+  }
+  
+  .mission-text {
+    width: 50%;
+  }
+  
+  .values-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .team-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

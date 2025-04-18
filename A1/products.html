@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Products - PaperCraft</title>
+        <link rel="stylesheet" href="./styles.css" />
+        <link rel="stylesheet" href="./products.css" />
+    </head>
+    <body>
+        <!-- Header with Hamburger Menu -->
+        <header>
+            <div class="container">
+                <div class="flex justify-between items-center py-6">
+                    <div class="logo">PaperCraft</div>
+
+                    <!-- Mobile Menu Toggle -->
+                    <input type="checkbox" id="menu-toggle" class="hidden" />
+                    <label for="menu-toggle" class="hamburger sm:hidden">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+
+                    <!-- Desktop Navigation Menu -->
+                    <nav class="desktop-nav">
+                        <div class="flex space-x-6">
+                            <a href="./index.html" class="nav-link">Home</a>
+                            <a href="./products.html" class="nav-link active"
+                                >Products</a
+                            >
+                            <a href="./about.html" class="nav-link">About</a>
+                            <a href="./contact.html" class="nav-link"
+                                >Contact</a
+                            >
+                            <a href="./cart.html" class="nav-link">Cart</a>
+                        </div>
+                    </nav>
+
+                    <!-- Mobile Menu (Expanded) -->
+                    <div class="mobile-menu">
+                        <div class="container">
+                            <nav class="mobile-nav space-y-6">
+                                <a href="./index.html" class="nav-link">Home</a>
+                                <a
+                                    href="./products.html"
+                                    class="nav-link active"
+                                    >Products</a
+                                >
+                                <a href="./about.html" class="nav-link"
+                                    >About</a
+                                >
+                                <a href="./contact.html" class="nav-link"
+                                    >Contact</a
+                                >
+                                <a href="./cart.html" class="nav-link">Cart</a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Product Listing -->
+        <section class="py-12">
+            <div class="container">
+                <h1 class="mb-8">Our Products</h1>
+
+                <!-- Categories -->
+                <div class="mb-8">
+                    <h2 class="mb-4">Categories</h2>
+                    <div class="categories">
+                        <a href="#" class="category-tag active">All Products</a>
+                        <a href="#" class="category-tag">Notebooks</a>
+                        <a href="#" class="category-tag">Pens & Pencils</a>
+                        <a href="#" class="category-tag">Desk Accessories</a>
+                        <a href="#" class="category-tag">Planners</a>
+                    </div>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="products-grid">
+                    <!-- Product 1 -->
+                    <div class="product-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1572726729207-a78d6feb18d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Premium Notebook"
+                            class="product-card-img"
+                        />
+                        <div class="product-card-content">
+                            <h3 class="product-card-title">Premium Notebook</h3>
+                            <p class="product-card-desc">
+                                High-quality paper, hardcover, perfect for
+                                journaling.
+                            </p>
+                            <div class="product-card-footer">
+                                <span class="product-card-price">$24.99</span>
+                                <a href="#" class="btn btn-primary btn-sm"
+                                    >Add to Cart</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="product-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Fountain Pen Set"
+                            class="product-card-img"
+                        />
+                        <div class="product-card-content">
+                            <h3 class="product-card-title">Fountain Pen Set</h3>
+                            <p class="product-card-desc">
+                                Elegant design with smooth writing experience.
+                            </p>
+                            <div class="product-card-footer">
+                                <span class="product-card-price">$49.99</span>
+                                <a href="#" class="btn btn-primary btn-sm"
+                                    >Add to Cart</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="product-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1456735190827-d1262f71b8a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Desk Organizer"
+                            class="product-card-img"
+                        />
+                        <div class="product-card-content">
+                            <h3 class="product-card-title">Desk Organizer</h3>
+                            <p class="product-card-desc">
+                                Keep your workspace tidy with our wooden
+                                organizer.
+                            </p>
+                            <div class="product-card-footer">
+                                <span class="product-card-price">$34.99</span>
+                                <a href="#" class="btn btn-primary btn-sm"
+                                    >Add to Cart</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="product-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1531592937781-344ad608fabf?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Colored Pencil Set"
+                            class="product-card-img"
+                        />
+                        <div class="product-card-content">
+                            <h3 class="product-card-title">
+                                Colored Pencil Set
+                            </h3>
+                            <p class="product-card-desc">
+                                24 vibrant colors for artists and designers.
+                            </p>
+                            <div class="product-card-footer">
+                                <span class="product-card-price">$19.99</span>
+                                <a href="#" class="btn btn-primary btn-sm"
+                                    >Add to Cart</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 5 -->
+                    <div class="product-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1676042344266-78843a25bd0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Weekly Planner"
+                            class="product-card-img"
+                        />
+                        <div class="product-card-content">
+                            <h3 class="product-card-title">Weekly Planner</h3>
+                            <p class="product-card-desc">
+                                Stay organized with our premium weekly planner.
+                            </p>
+                            <div class="product-card-footer">
+                                <span class="product-card-price">$29.99</span>
+                                <a href="#" class="btn btn-primary btn-sm"
+                                    >Add to Cart</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 6 -->
+                    <div class="product-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1554103210-26d928978fb5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Sticky Notes Set"
+                            class="product-card-img"
+                        />
+                        <div class="product-card-content">
+                            <h3 class="product-card-title">Sticky Notes Set</h3>
+                            <p class="product-card-desc">
+                                Colorful sticky notes for reminders and notes.
+                            </p>
+                            <div class="product-card-footer">
+                                <span class="product-card-price">$12.99</span>
+                                <a href="#" class="btn btn-primary btn-sm"
+                                    >Add to Cart</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 7 -->
+                    <div class="product-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1519327232521-1ea2c736d34d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Leather Journal"
+                            class="product-card-img"
+                        />
+                        <div class="product-card-content">
+                            <h3 class="product-card-title">Leather Journal</h3>
+                            <p class="product-card-desc">
+                                Handcrafted leather journal with premium paper.
+                            </p>
+                            <div class="product-card-footer">
+                                <span class="product-card-price">$39.99</span>
+                                <a href="#" class="btn btn-primary btn-sm"
+                                    >Add to Cart</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 8 -->
+                    <div class="product-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1568205612837-017257d2310a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Desk Lamp"
+                            class="product-card-img"
+                        />
+                        <div class="product-card-content">
+                            <h3 class="product-card-title">Desk Lamp</h3>
+                            <p class="product-card-desc">
+                                Adjustable LED desk lamp with multiple
+                                brightness levels.
+                            </p>
+                            <div class="product-card-footer">
+                                <span class="product-card-price">$45.99</span>
+                                <a href="#" class="btn btn-primary btn-sm"
+                                    >Add to Cart</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-8">
+            <div class="container">
+                <div class="grid md:grid-cols-4">
+                    <div class="mb-8 md:mb-0">
+                        <h3 class="footer-heading">PaperCraft</h3>
+                        <p class="text-gray">
+                            Premium stationery for creative minds.
+                        </p>
+                    </div>
+                    <div class="mb-8 md:mb-0">
+                        <h3 class="footer-heading">Shop</h3>
+                        <ul class="space-y-2">
+                            <li>
+                                <a href="./products.html" class="footer-link"
+                                    >Notebooks</a
+                                >
+                            </li>
+                            <li>
+                                <a href="./products.html" class="footer-link"
+                                    >Pens & Pencils</a
+                                >
+                            </li>
+                            <li>
+                                <a href="./products.html" class="footer-link"
+                                    >Desk Accessories</a
+                                >
+                            </li>
+                            <li>
+                                <a href="./products.html" class="footer-link"
+                                    >Planners</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mb-8 md:mb-0">
+                        <h3 class="footer-heading">Company</h3>
+                        <ul class="space-y-2">
+                            <li>
+                                <a href="./about.html" class="footer-link"
+                                    >About Us</a
+                                >
+                            </li>
+                            <li>
+                                <a href="./contact.html" class="footer-link"
+                                    >Contact</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#" class="footer-link">Shipping</a>
+                            </li>
+                            <li><a href="#" class="footer-link">Returns</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="footer-heading">Connect</h3>
+                        <ul class="space-y-2">
+                            <li>
+                                <a href="#" class="footer-link">Instagram</a>
+                            </li>
+                            <li><a href="#" class="footer-link">Twitter</a></li>
+                            <li>
+                                <a href="#" class="footer-link">Facebook</a>
+                            </li>
+                            <li>
+                                <a href="#" class="footer-link">Pinterest</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="border-t mt-8 pt-8 text-center text-gray">
+                    <p>&copy; 2025 PaperCraft. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

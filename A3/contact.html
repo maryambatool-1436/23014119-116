@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Contact Us - PaperCraft</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            // This script only runs once at load time to configure Tailwind
+            tailwind.config = {
+                darkMode: "class", // uses system preference
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: {
+                                light: "#4f46e5",
+                                dark: "#818cf8",
+                            },
+                        },
+                    },
+                },
+            };
+        </script>
+        <link rel="stylesheet" href="./styles.css" />
+    </head>
+    <body
+        class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 min-h-screen"
+    >
+        <!-- Header with Hamburger Menu -->
+        <header class="border-b border-gray-200 dark:border-gray-700">
+            <div class="container mx-auto px-4 py-6">
+                <div class="flex justify-between items-center">
+                    <div
+                        class="text-3xl font-bold text-primary-light dark:text-primary-dark"
+                    >
+                        PaperCraft
+                    </div>
+
+                    <!-- Mobile Menu & Theme Toggle -->
+                    <div class="md:hidden flex items-center space-x-4">
+                        <button
+                            id="mobile-theme-toggle"
+                            class="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark"
+                            aria-label="Toggle theme"
+                        >
+                            <!-- Sun icon (for dark mode) -->
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="h-5 w-5 text-gray-800 dark:text-gray-200 dark:hidden"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                                />
+                            </svg>
+                            <!-- Moon icon (for light mode) -->
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="h-5 w-5 text-gray-800 dark:text-gray-200 hidden dark:block"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                                />
+                            </svg>
+                        </button>
+
+                        <button
+                            id="menu-toggle"
+                            class="flex flex-col space-y-1 cursor-pointer z-50 bg-transparent border-none p-0"
+                            aria-label="Toggle navigation menu"
+                        >
+                            <span
+                                class="block w-6 h-0.5 bg-gray-800 dark:bg-gray-200 transition-transform duration-300"
+                            ></span>
+                            <span
+                                class="block w-6 h-0.5 bg-gray-800 dark:bg-gray-200 transition-opacity duration-300"
+                            ></span>
+                            <span
+                                class="block w-6 h-0.5 bg-gray-800 dark:bg-gray-200 transition-transform duration-300"
+                            ></span>
+                        </button>
+                    </div>
+
+                    <!-- Navigation Menu -->
+                    <nav class="hidden md:flex md:space-x-6 items-center">
+                        <a
+                            href="./index.html"
+                            class="font-medium hover:text-primary-light dark:hover:text-primary-dark"
+                            >Home</a
+                        >
+                        <a
+                            href="./products.html"
+                            class="font-medium hover:text-primary-light dark:hover:text-primary-dark"
+                            >Products</a
+                        >
+                        <a
+                            href="./about.html"
+                            class="font-medium hover:text-primary-light dark:hover:text-primary-dark"
+                            >About</a
+                        >
+                        <a
+                            href="./contact.html"
+                            class="font-medium text-primary-light dark:text-primary-dark border-b-2 border-primary-light dark:border-primary-dark"
+                            >Contact</a
+                        >
+                        <a
+                            href="./cart.html"
+                            class="font-medium hover:text-primary-light dark:hover:text-primary-dark"
+                            >Cart</a
+                        >
+                        <button
+                            id="theme-toggle"
+                            class="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark"
+                            aria-label="Toggle theme"
+                        >
+                            <!-- Sun icon (for dark mode) -->
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="h-5 w-5 text-gray-800 dark:text-gray-200 dark:hidden"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                                />
+                            </svg>
+                            <!-- Moon icon (for light mode) -->
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="h-5 w-5 text-gray-800 dark:text-gray-200 hidden dark:block"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                                />
+                            </svg>
+                        </button>
+                    </nav>
+
+                    <!-- Mobile Menu (Expanded) -->
+                    <div
+                        class="mobile-menu absolute top-0 left-0 right-0 bg-white dark:bg-gray-900 z-40 shadow-lg transform -translate-y-full transition-transform duration-300 ease-in-out md:hidden"
+                    >
+                        <div class="container mx-auto px-4 py-20">
+                            <nav class="flex flex-col space-y-6 items-center">
+                                <a
+                                    href="./index.html"
+                                    class="font-medium hover:text-primary-light dark:hover:text-primary-dark w-full text-center py-2"
+                                    >Home</a
+                                >
+                                <a
+                                    href="./products.html"
+                                    class="font-medium hover:text-primary-light dark:hover:text-primary-dark w-full text-center py-2"
+                                    >Products</a
+                                >
+                                <a
+                                    href="./about.html"
+                                    class="font-medium hover:text-primary-light dark:hover:text-primary-dark w-full text-center py-2"
+                                    >About</a
+                                >
+                                <a
+                                    href="./contact.html"
+                                    class="font-medium text-primary-light dark:text-primary-dark border-b-2 border-primary-light dark:border-primary-dark w-full text-center py-2"
+                                    >Contact</a
+                                >
+                                <a
+                                    href="./cart.html"
+                                    class="font-medium hover:text-primary-light dark:hover:text-primary-dark w-full text-center py-2"
+                                    >Cart</a
+                                >
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Contact Hero -->
+        <section class="py-12 md:py-20 bg-gray-50 dark:bg-gray-800">
+            <div class="container mx-auto px-4">
+                <div class="max-w-3xl mx-auto text-center">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6">
+                        Get in Touch
+                    </h1>
+                    <p class="text-xl text-gray-600 dark:text-gray-400">
+                        Have questions about our products or need assistance?
+                        We're here to help!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Information and Form -->
+        <section class="py-12 md:py-16">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col lg:flex-row gap-12">
+                    <!-- Contact Information -->
+                    <div class="lg:w-1/3">
+                        <h2 class="text-2xl font-bold mb-6">
+                            Contact Information
+                        </h2>
+
+                        <div class="mb-8">
+                            <h3 class="text-lg font-semibold mb-2">Address</h3>
+                            <p class="text-gray-600 dark:text-gray-400">
+                                123 Stationery Street<br />
+                                Craftsville, CA 94103<br />
+                                United States
+                            </p>
+                        </div>
+
+                        <div class="mb-8">
+                            <h3 class="text-lg font-semibold mb-2">Email</h3>
+                            <p class="text-gray-600 dark:text-gray-400">
+                                info@papercraft.com<br />
+                                support@papercraft.com
+                            </p>
+                        </div>
+
+                        <div class="mb-8">
+                            <h3 class="text-lg font-semibold mb-2">Phone</h3>
+                            <p class="text-gray-600 dark:text-gray-400">
+                                +1 (555) 123-4567<br />
+                                Mon-Fri, 9am-5pm PST
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold mb-2">
+                                Follow Us
+                            </h3>
+                            <div class="flex space-x-4">
+                                <a
+                                    href="#"
+                                    class="text-gray-600 dark:text-gray-400 hover:text-primary-light dark:hover:text-primary-dark"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="h-6 w-6"
+                                        fill="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                                        />
+                                    </svg>
+                                </a>
+                                <a
+                                    href="#"
+                                    class="text-gray-600 dark:text-gray-400 hover:text-primary-light dark:hover:text-primary-dark"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="h-6 w-6"
+                                        fill="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+                                        />
+                                    </svg>
+                                </a>
+                                <a
+                                    href="#"
+                                    class="text-gray-600 dark:text-gray-400 hover:text-primary-light dark:hover:text-primary-dark"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="h-6 w-6"
+                                        fill="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"
+                                        />
+                                    </svg>
+                                </a>
+                                <a
+                                    href="#"
+                                    class="text-gray-600 dark:text-gray-400 hover:text-primary-light dark:hover:text-primary-dark"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="h-6 w-6"
+                                        fill="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"
+                                        />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="lg:w-2/3">
+                        <h2 class="text-2xl font-bold mb-6">
+                            Send Us a Message
+                        </h2>
+                        <form>
+                            <div
+                                class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6"
+                            >
+                                <div>
+                                    <label
+                                        for="name"
+                                        class="block text-sm font-medium mb-2"
+                                        >Name</label
+                                    >
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark"
+                                    />
+                                </div>
+                                <div>
+                                    <label
+                                        for="email"
+                                        class="block text-sm font-medium mb-2"
+                                        >Email</label
+                                    >
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark"
+                                    />
+                                </div>
+                            </div>
+
+                            <div class="mb-6">
+                                <label
+                                    for="subject"
+                                    class="block text-sm font-medium mb-2"
+                                    >Subject</label
+                                >
+                                <input
+                                    type="text"
+                                    id="subject"
+                                    name="subject"
+                                    class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark"
+                                />
+                            </div>
+
+                            <div class="mb-6">
+                                <label
+                                    for="message"
+                                    class="block text-sm font-medium mb-2"
+                                    >Message</label
+                                >
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    rows="6"
+                                    class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark"
+                                ></textarea>
+                            </div>
+
+                            <button
+                                type="submit"
+                                class="bg-primary-light dark:bg-primary-dark text-white font-medium py-3 px-6 rounded-lg hover:bg-opacity-90 transition-colors"
+                            >
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map -->
+        <section class="py-12 bg-gray-50 dark:bg-gray-800">
+            <div class="container mx-auto px-4">
+                <h2 class="text-2xl font-bold mb-6 text-center">
+                    Visit Our Store
+                </h2>
+                <div
+                    class="h-96 bg-gray-300 dark:bg-gray-700 rounded-lg overflow-hidden"
+                >
+                    <!-- Placeholder for map -->
+                    <div class="w-full h-full flex items-center justify-center">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8434206368345!2d-122.4194!3d37.7749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDQ2JzI5LjYiTiAxMjLCsDI1JzA5LjgiVw!5e0!3m2!1sen!2sus!4v1635234245678!5m2!1sen!2sus"
+                            width="100%"
+                            height="100%"
+                            style="border: 0"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            class="w-full h-full"
+                            title="PaperCraft Store Location"
+                        >
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer
+            class="bg-gray-100 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 py-8"
+        >
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">PaperCraft</h3>
+                        <p class="text-gray-600 dark:text-gray-400">
+                            Premium stationery for creative minds.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">Shop</h3>
+                        <ul class="space-y-2">
+                            <li>
+                                <a
+                                    href="./products.html"
+                                    class="text-gray-600 dark:text-gray-400 hover:text-primary-light dark:hover:text-primary-dark"
+                                    >Notebooks</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="./products.html"
+                                    class="text-gray-600 dark:text-gray-400 hover:text-primary-light dark:hover:text-primary-dark"
+                                    >Pens & Pencils</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="./products.html"
+                                    class="text-gray-600 dark:text-gray-400 hover:text-primary-light dark:hover:text-primary-dark"
+                                    >Desk Accessories</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="./products.html"
+                                    class="text-gray-600 dark:text-gray-400 hover:text-primary-light dark:hover:text-primary-dark"
+                                    >Planners</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">Company</h3>
+                        <ul class="space-y-2">
+                            <li>
+                                <a
+                                    href="./about.html"
+                                    class="text-gray-600 dark:text-gray-400 hover:text-primary-light dark:hover:text-primary-dark"
+                                    >About Us</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="./contact.html"
+                                    class="text-gray-600 dark:text-gray-400 hover:text-primary-light dark:hover:text-primary-dark"
+                                    >Contact</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-gray-600 dark:text-gray-400 hover:text-primary-light dark:hover:text-primary-dark"
+                                    >Shipping</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-gray-600 dark:text-gray-400 hover:text-primary-light dark:hover:text-primary-dark"
+                                    >Returns</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">Connect</h3>
+                        <ul class="space-y-2">
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-gray-600 dark:text-gray-400 hover:text-primary-light dark:hover:text-primary-dark"
+                                    >Instagram</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-gray-600 dark:text-gray-400 hover:text-primary-light dark:hover:text-primary-dark"
+                                    >Twitter</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-gray-600 dark:text-gray-400 hover:text-primary-light dark:hover:text-primary-dark"
+                                    >Facebook</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-gray-600 dark:text-gray-400 hover:text-primary-light dark:hover:text-primary-dark"
+                                    >Pinterest</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div
+                    class="border-t border-gray-200 dark:border-gray-700 mt-8 pt-8 text-center text-gray-600 dark:text-gray-400"
+                >
+                    <p>&copy; 2025 PaperCraft. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+        <script src="./script.js"></script>
+    </body>
+</html>

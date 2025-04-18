@@ -1,0 +1,41 @@
+/* Custom styles beyond Tailwind */
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+:focus {
+    outline: 2px solid rgba(79, 70, 229, 0.5);
+    outline-offset: 2px;
+}
+
+/* Custom form placeholder color */
+::placeholder {
+    color: #9ca3af;
+}
+
+.dark ::placeholder {
+    color: #6b7280;
+}
+
+/* Custom selection color */
+::selection {
+    background-color: rgba(79, 70, 229, 0.2);
+}
+
+.dark ::selection {
+    background-color: rgba(129, 140, 248, 0.2);
+}
+/* Mobile Menu Styles */
+.mobile-menu {
+    height: 100vh;
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(-100%); /* Start with menu hidden */
+}
+
+/* Remove button outline */
+#menu-toggle {
+    outline: none;
+}

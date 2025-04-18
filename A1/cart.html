@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Shopping Cart - PaperCraft</title>
+        <link rel="stylesheet" href="./styles.css" />
+        <link rel="stylesheet" href="./cart.css" />
+    </head>
+    <body>
+        <!-- Header with Hamburger Menu -->
+        <header>
+            <div class="container">
+                <div class="flex justify-between items-center py-6">
+                    <div class="logo">PaperCraft</div>
+
+                    <!-- Mobile Menu Toggle -->
+                    <input type="checkbox" id="menu-toggle" class="hidden" />
+                    <label for="menu-toggle" class="hamburger sm:hidden">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+
+                    <!-- Desktop Navigation Menu -->
+                    <nav class="desktop-nav">
+                        <div class="flex space-x-6">
+                            <a href="./index.html" class="nav-link">Home</a>
+                            <a href="./products.html" class="nav-link"
+                                >Products</a
+                            >
+                            <a href="./about.html" class="nav-link">About</a>
+                            <a href="./contact.html" class="nav-link"
+                                >Contact</a
+                            >
+                            <a href="./cart.html" class="nav-link active"
+                                >Cart</a
+                            >
+                        </div>
+                    </nav>
+
+                    <!-- Mobile Menu (Expanded) -->
+                    <div class="mobile-menu">
+                        <div class="container">
+                            <nav class="mobile-nav space-y-6">
+                                <a href="./index.html" class="nav-link">Home</a>
+                                <a href="./products.html" class="nav-link"
+                                    >Products</a
+                                >
+                                <a href="./about.html" class="nav-link"
+                                    >About</a
+                                >
+                                <a href="./contact.html" class="nav-link"
+                                    >Contact</a
+                                >
+                                <a href="./cart.html" class="nav-link active"
+                                    >Cart</a
+                                >
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Cart Section -->
+        <section class="cart-section py-12">
+            <div class="container">
+                <h1 class="mb-8">Your Shopping Cart</h1>
+
+                <!-- Cart Content -->
+                <div class="cart-container">
+                    <!-- Cart Items -->
+                    <div class="cart-items">
+                        <!-- Cart Item 1 -->
+                        <div class="cart-item">
+                            <div class="cart-item-image">
+                                <img
+                                    src="https://images.unsplash.com/photo-1572726729207-a78d6feb18d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                    alt="Premium Notebook"
+                                    class="cart-img"
+                                />
+                            </div>
+                            <div class="cart-item-details">
+                                <div class="cart-item-header">
+                                    <div>
+                                        <h3 class="cart-item-title">
+                                            Premium Notebook
+                                        </h3>
+                                        <p class="cart-item-desc">
+                                            High-quality paper, hardcover
+                                        </p>
+                                        <p class="cart-item-sku">SKU: NB-001</p>
+                                    </div>
+                                    <div class="cart-item-price">$24.99</div>
+                                </div>
+                                <div class="cart-item-actions">
+                                    <div class="cart-item-quantity">
+                                        <label
+                                            for="quantity1"
+                                            class="quantity-label"
+                                            >Quantity:</label
+                                        >
+                                        <select
+                                            id="quantity1"
+                                            name="quantity1"
+                                            class="quantity-select"
+                                        >
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                    </div>
+                                    <a href="#" class="cart-item-remove"
+                                        >Remove</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cart Item 2 -->
+                        <div class="cart-item">
+                            <div class="cart-item-image">
+                                <img
+                                    src="https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                    alt="Fountain Pen Set"
+                                    class="cart-img"
+                                />
+                            </div>
+                            <div class="cart-item-details">
+                                <div class="cart-item-header">
+                                    <div>
+                                        <h3 class="cart-item-title">
+                                            Fountain Pen Set
+                                        </h3>
+                                        <p class="cart-item-desc">
+                                            Elegant design with smooth writing
+                                            experience
+                                        </p>
+                                        <p class="cart-item-sku">SKU: FP-002</p>
+                                    </div>
+                                    <div class="cart-item-price">$49.99</div>
+                                </div>
+                                <div class="cart-item-actions">
+                                    <div class="cart-item-quantity">
+                                        <label
+                                            for="quantity2"
+                                            class="quantity-label"
+                                            >Quantity:</label
+                                        >
+                                        <select
+                                            id="quantity2"
+                                            name="quantity2"
+                                            class="quantity-select"
+                                        >
+                                            <option value="1">1</option>
+                                            <option value="2" selected>
+                                                2
+                                            </option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                    </div>
+                                    <a href="#" class="cart-item-remove"
+                                        >Remove</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cart Item 3 -->
+                        <div class="cart-item">
+                            <div class="cart-item-image">
+                                <img
+                                    src="https://images.unsplash.com/photo-1676042344266-78843a25bd0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                    alt="Weekly Planner"
+                                    class="cart-img"
+                                />
+                            </div>
+                            <div class="cart-item-details">
+                                <div class="cart-item-header">
+                                    <div>
+                                        <h3 class="cart-item-title">
+                                            Weekly Planner
+                                        </h3>
+                                        <p class="cart-item-desc">
+                                            Stay organized with our premium
+                                            weekly planner
+                                        </p>
+                                        <p class="cart-item-sku">SKU: WP-003</p>
+                                    </div>
+                                    <div class="cart-item-price">$29.99</div>
+                                </div>
+                                <div class="cart-item-actions">
+                                    <div class="cart-item-quantity">
+                                        <label
+                                            for="quantity3"
+                                            class="quantity-label"
+                                            >Quantity:</label
+                                        >
+                                        <select
+                                            id="quantity3"
+                                            name="quantity3"
+                                            class="quantity-select"
+                                        >
+                                            <option value="1" selected>
+                                                1
+                                            </option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                    </div>
+                                    <a href="#" class="cart-item-remove"
+                                        >Remove</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Continue Shopping Button -->
+                        <div class="continue-shopping">
+                            <a href="./products.html" class="continue-link">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="continue-icon"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                >
+                                    <path
+                                        fill-rule="evenodd"
+                                        d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z"
+                                        clip-rule="evenodd"
+                                    />
+                                </svg>
+                                Continue Shopping
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Order Summary -->
+                    <div class="order-summary">
+                        <div class="summary-card">
+                            <h2 class="summary-title">Order Summary</h2>
+
+                            <!-- Subtotal -->
+                            <div class="summary-row">
+                                <span class="summary-label"
+                                    >Subtotal (4 items)</span
+                                >
+                                <span class="summary-value">$154.96</span>
+                            </div>
+
+                            <!-- Shipping -->
+                            <div class="shipping-options">
+                                <h3 class="shipping-title">Shipping</h3>
+                                <div class="shipping-option">
+                                    <input
+                                        type="radio"
+                                        id="shipping-standard"
+                                        name="shipping"
+                                        value="standard"
+                                        checked
+                                        class="shipping-radio"
+                                    />
+                                    <label
+                                        for="shipping-standard"
+                                        class="shipping-label"
+                                        >Standard Shipping (3-5 business days) -
+                                        $4.99</label
+                                    >
+                                </div>
+                                <div class="shipping-option">
+                                    <input
+                                        type="radio"
+                                        id="shipping-express"
+                                        name="shipping"
+                                        value="express"
+                                        class="shipping-radio"
+                                    />
+                                    <label
+                                        for="shipping-express"
+                                        class="shipping-label"
+                                        >Express Shipping (1-2 business days) -
+                                        $9.99</label
+                                    >
+                                </div>
+                            </div>
+
+                            <!-- Promo Code -->
+                            <div class="promo-code">
+                                <label for="promo" class="promo-label"
+                                    >Promo Code</label
+                                >
+                                <div class="promo-input-group">
+                                    <input
+                                        type="text"
+                                        id="promo"
+                                        name="promo"
+                                        placeholder="Enter code"
+                                        class="promo-input"
+                                    />
+                                    <button type="button" class="promo-button">
+                                        Apply
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Total -->
+                            <div class="summary-total">
+                                <div class="summary-row">
+                                    <span class="summary-label">Shipping</span>
+                                    <span class="summary-value">$4.99</span>
+                                </div>
+                                <div class="summary-row">
+                                    <span class="summary-label">Tax</span>
+                                    <span class="summary-value">$12.40</span>
+                                </div>
+                                <div class="summary-row total">
+                                    <span class="total-label">Total</span>
+                                    <span class="total-value">$172.35</span>
+                                </div>
+                            </div>
+
+                            <!-- Checkout Button -->
+                            <a href="#" class="checkout-button">
+                                Proceed to Checkout
+                            </a>
+
+                            <!-- Payment Methods -->
+                            <div class="payment-methods">
+                                <p class="payment-text">We Accept</p>
+                                <div class="payment-icons">
+                                    <div class="payment-icon"></div>
+                                    <div class="payment-icon"></div>
+                                    <div class="payment-icon"></div>
+                                    <div class="payment-icon"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- You May Also Like -->
+        <section class="recommendations gray-bg-light py-12">
+            <div class="container">
+                <h2 class="mb-8">You May Also Like</h2>
+                <div class="recommendations-grid">
+                    <!-- Recommendation 1 -->
+                    <div class="recommendation-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1456735190827-d1262f71b8a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Desk Organizer"
+                            class="recommendation-img"
+                        />
+                        <div class="recommendation-content">
+                            <h3 class="recommendation-title">Desk Organizer</h3>
+                            <p class="recommendation-desc">
+                                Keep your workspace tidy
+                            </p>
+                            <div class="recommendation-footer">
+                                <span class="recommendation-price">$34.99</span>
+                                <a href="#" class="recommendation-link">View</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recommendation 2 -->
+                    <div class="recommendation-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1531592937781-344ad608fabf?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Colored Pencil Set"
+                            class="recommendation-img"
+                        />
+                        <div class="recommendation-content">
+                            <h3 class="recommendation-title">
+                                Colored Pencil Set
+                            </h3>
+                            <p class="recommendation-desc">24 vibrant colors</p>
+                            <div class="recommendation-footer">
+                                <span class="recommendation-price">$19.99</span>
+                                <a href="#" class="recommendation-link">View</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recommendation 3 -->
+                    <div class="recommendation-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1554103210-26d928978fb5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Sticky Notes Set"
+                            class="recommendation-img"
+                        />
+                        <div class="recommendation-content">
+                            <h3 class="recommendation-title">
+                                Sticky Notes Set
+                            </h3>
+                            <p class="recommendation-desc">
+                                Colorful sticky notes
+                            </p>
+                            <div class="recommendation-footer">
+                                <span class="recommendation-price">$12.99</span>
+                                <a href="#" class="recommendation-link">View</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recommendation 4 -->
+                    <div class="recommendation-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1519327232521-1ea2c736d34d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Leather Journal"
+                            class="recommendation-img"
+                        />
+                        <div class="recommendation-content">
+                            <h3 class="recommendation-title">
+                                Leather Journal
+                            </h3>
+                            <p class="recommendation-desc">
+                                Handcrafted leather
+                            </p>
+                            <div class="recommendation-footer">
+                                <span class="recommendation-price">$39.99</span>
+                                <a href="#" class="recommendation-link">View</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-8">
+            <div class="container">
+                <div class="grid md:grid-cols-4">
+                    <div class="mb-8 md:mb-0">
+                        <h3 class="footer-heading">PaperCraft</h3>
+                        <p class="text-gray">
+                            Premium stationery for creative minds.
+                        </p>
+                    </div>
+                    <div class="mb-8 md:mb-0">
+                        <h3 class="footer-heading">Shop</h3>
+                        <ul class="space-y-2">
+                            <li>
+                                <a href="./products.html" class="footer-link"
+                                    >Notebooks</a
+                                >
+                            </li>
+                            <li>
+                                <a href="./products.html" class="footer-link"
+                                    >Pens & Pencils</a
+                                >
+                            </li>
+                            <li>
+                                <a href="./products.html" class="footer-link"
+                                    >Desk Accessories</a
+                                >
+                            </li>
+                            <li>
+                                <a href="./products.html" class="footer-link"
+                                    >Planners</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mb-8 md:mb-0">
+                        <h3 class="footer-heading">Company</h3>
+                        <ul class="space-y-2">
+                            <li>
+                                <a href="./about.html" class="footer-link"
+                                    >About Us</a
+                                >
+                            </li>
+                            <li>
+                                <a href="./contact.html" class="footer-link"
+                                    >Contact</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#" class="footer-link">Shipping</a>
+                            </li>
+                            <li><a href="#" class="footer-link">Returns</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="footer-heading">Connect</h3>
+                        <ul class="space-y-2">
+                            <li>
+                                <a href="#" class="footer-link">Instagram</a>
+                            </li>
+                            <li><a href="#" class="footer-link">Twitter</a></li>
+                            <li>
+                                <a href="#" class="footer-link">Facebook</a>
+                            </li>
+                            <li>
+                                <a href="#" class="footer-link">Pinterest</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="border-t mt-8 pt-8 text-center text-gray">
+                    <p>&copy; 2025 PaperCraft. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

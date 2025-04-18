@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Shopping Cart - PaperCraft</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            // This script only runs once at load time to configure Tailwind
+            tailwind.config = {
+                darkMode: "class", // uses system preference
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: {
+                                light: "#4f46e5",
+                                dark: "#818cf8",
+                            },
+                        },
+                    },
+                },
+            };
+        </script>
+        <link rel="stylesheet" href="./styles.css" />
+    </head>
+    <body
+        class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 min-h-screen"
+    >
+        <!-- Header with Hamburger Menu -->
+        <header class="border-b border-gray-200 dark:border-gray-700">
+            <div class="container mx-auto px-4 py-6">
+                <div class="flex justify-between items-center">
+                    <div
+                        class="text-3xl font-bold text-primary-light dark:text-primary-dark"
+                    >
+                        PaperCraft
+                    </div>
+
+                    <!-- Mobile Menu Toggle -->
+                    <input type="checkbox" id="menu-toggle" class="hidden" />
+                    <label
+                        for="menu-toggle"
+                        class="md:hidden flex flex-col space-y-1 cursor-pointer z-50"
+                    >
+                        <span
+                            class="block w-6 h-0.5 bg-gray-800 dark:bg-gray-200"
+                        ></span>
+                        <span
+                            class="block w-6 h-0.5 bg-gray-800 dark:bg-gray-200"
+                        ></span>
+                        <span
+                            class="block w-6 h-0.5 bg-gray-800 dark:bg-gray-200"
+                        ></span>
+                    </label>
+
+                    <!-- Navigation Menu -->
+                    <nav class="hidden md:flex md:space-x-6">
+                        <a
+                            href="index.html"
+                            class="font-medium hover:text-primary-light dark:hover:text-primary-dark"
+                            >Home</a
+                        >
+                        <a
+                            href="products.html"
+                            class="font-medium hover:text-primary-light dark:hover:text-primary-dark"
+                            >Products</a
+                        >
+                        <a
+                            href="about.html"
+                            class="font-medium hover:text-primary-light dark:hover:text-primary-dark"
+                            >About</a
+                        >
+                        <a
+                            href="contact.html"
+                            class="font-medium hover:text-primary-light dark:hover:text-primary-dark"
+                            >Contact</a
+                        >
+                        <a
+                            href="cart.html"
+                            class="font-medium text-primary-light dark:text-primary-dark border-b-2 border-primary-light dark:border-primary-dark"
+                            >Cart</a
+                        >
+                    </nav>
+
+                    <!-- Mobile Menu (Expanded) -->
+                    <div
+                        class="mobile-menu absolute top-0 left-0 right-0 bg-white dark:bg-gray-900 z-40 shadow-lg transform -translate-y-full transition-transform duration-300 ease-in-out md:hidden"
+                    >
+                        <div class="container mx-auto px-4 py-20">
+                            <nav class="flex flex-col space-y-6 items-center">
+                                <a
+                                    href="index.html"
+                                    class="font-medium hover:text-primary-light dark:hover:text-primary-dark w-full text-center py-2"
+                                    >Home</a
+                                >
+                                <a
+                                    href="products.html"
+                                    class="font-medium hover:text-primary-light dark:hover:text-primary-dark w-full text-center py-2"
+                                    >Products</a
+                                >
+                                <a
+                                    href="about.html"
+                                    class="font-medium hover:text-primary-light dark:hover:text-primary-dark w-full text-center py-2"
+                                    >About</a
+                                >
+                                <a
+                                    href="contact.html"
+                                    class="font-medium hover:text-primary-light dark:hover:text-primary-dark w-full text-center py-2"
+                                    >Contact</a
+                                >
+                                <a
+                                    href="cart.html"
+                                    class="font-medium text-primary-light dark:text-primary-dark border-b-2 border-primary-light dark:border-primary-dark"
+                                    >Cart</a
+                                >
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Cart Section -->
+        <section class="py-12">
+            <div class="container mx-auto px-4">
+                <h1 class="text-3xl font-bold mb-8">Your Shopping Cart</h1>
+
+                <!-- Cart Content -->
+                <div class="flex flex-col lg:flex-row gap-8">
+                    <!-- Cart Items -->
+                    <div class="cart lg:w-2/3">
+                        <!-- Cart Item 1 -->
+                        <div
+                            class="flex flex-col md:flex-row items-start border-b border-gray-200 dark:border-gray-700 py-6"
+                        >
+                            <div class="md:w-1/4 mb-4 md:mb-0">
+                                <img
+                                    src="https://images.unsplash.com/photo-1572726729207-a78d6feb18d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                    alt="Premium Notebook"
+                                    class="w-full h-32 object-cover rounded-lg"
+                                />
+                            </div>
+                            <div class="md:w-3/4 md:pl-6">
+                                <div
+                                    class="flex flex-col md:flex-row md:justify-between"
+                                >
+                                    <div>
+                                        <h3 class="text-lg font-bold mb-1">
+                                            Premium Notebook
+                                        </h3>
+                                        <p
+                                            class="text-gray-600 dark:text-gray-400 text-sm mb-2"
+                                        >
+                                            High-quality paper, hardcover
+                                        </p>
+                                        <p
+                                            class="text-sm text-gray-500 dark:text-gray-500 mb-4"
+                                        >
+                                            SKU: NB-001
+                                        </p>
+                                    </div>
+                                    <div class="text-lg font-bold">$24.99</div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center">
+                                        <label
+                                            for="quantity1"
+                                            class="mr-2 text-sm"
+                                            >Quantity:</label
+                                        >
+                                        <select
+                                            id="quantity1"
+                                            name="quantity1"
+                                            class="border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 px-2 py-1"
+                                        >
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                    </div>
+                                    <a
+                                        href="#"
+                                        class="text-primary-light dark:text-primary-dark text-sm hover:underline"
+                                        >Remove</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cart Item 2 -->
+                        <div
+                            class="flex flex-col md:flex-row items-start border-b border-gray-200 dark:border-gray-700 py-6"
+                        >
+                            <div class="md:w-1/4 mb-4 md:mb-0">
+                                <img
+                                    src="https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                    alt="Fountain Pen Set"
+                                    class="w-full h-32 object-cover rounded-lg"
+                                />
+                            </div>
+                            <div class="md:w-3/4 md:pl-6">
+                                <div
+                                    class="flex flex-col md:flex-row md:justify-between"
+                                >
+                                    <div>
+                                        <h3 class="text-lg font-bold mb-1">
+                                            Fountain Pen Set
+                                        </h3>
+                                        <p
+                                            class="text-gray-600 dark:text-gray-400 text-sm mb-2"
+                                        >
+                                            Elegant design with smooth writing
+                                            experience
+                                        </p>
+                                        <p
+                                            class="text-sm text-gray-500 dark:text-gray-500 mb-4"
+                                        >
+                                            SKU: FP-002
+                                        </p>
+                                    </div>
+                                    <div class="text-lg font-bold">$49.99</div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center">
+                                        <label
+                                            for="quantity2"
+                                            class="mr-2 text-sm"
+                                            >Quantity:</label
+                                        >
+                                        <select
+                                            id="quantity2"
+                                            name="quantity2"
+                                            class="border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 px-2 py-1"
+                                        >
+                                            <option value="1">1</option>
+                                            <option value="2" selected>
+                                                2
+                                            </option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                    </div>
+                                    <a
+                                        href="#"
+                                        class="text-primary-light dark:text-primary-dark text-sm hover:underline"
+                                        >Remove</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cart Item 3 -->
+                        <div class="flex flex-col md:flex-row items-start py-6">
+                            <div class="md:w-1/4 mb-4 md:mb-0">
+                                <img
+                                    src="https://images.unsplash.com/photo-1676042344266-78843a25bd0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                    alt="Weekly Planner"
+                                    class="w-full h-32 object-cover rounded-lg"
+                                />
+                            </div>
+                            <div class="md:w-3/4 md:pl-6">
+                                <div
+                                    class="flex flex-col md:flex-row md:justify-between"
+                                >
+                                    <div>
+                                        <h3 class="text-lg font-bold mb-1">
+                                            Weekly Planner
+                                        </h3>
+                                        <p
+                                            class="text-gray-600 dark:text-gray-400 text-sm mb-2"
+                                        >
+                                            Stay organized with our premium
+                                            weekly planner
+                                        </p>
+                                        <p
+                                            class="text-sm text-gray-500 dark:text-gray-500 mb-4"
+                                        >
+                                            SKU: WP-003
+                                        </p>
+                                    </div>
+                                    <div class="text-lg font-bold">$29.99</div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center">
+                                        <label
+                                            for="quantity3"
+                                            class="mr-2 text-sm"
+                                            >Quantity:</label
+                                        >
+                                        <select
+                                            id="quantity3"
+                                            name="quantity3"
+                                            class="border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 px-2 py-1"
+                                        >
+                                            <option value="1" selected>
+                                                1
+                                            </option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                    </div>
+                                    <a
+                                        href="#"
+                                        class="text-primary-light dark:text-primary-dark text-sm hover:underline"
+                                        >Remove</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Continue Shopping Button -->
+                        <div class="mt-8">
+                            <a
+                                href="./products.html"
+                                class="inline-flex items-center text-primary-light dark:text-primary-dark hover:underline"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="h-5 w-5 mr-2"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                >
+                                    <path
+                                        fill-rule="evenodd"
+                                        d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z"
+                                        clip-rule="evenodd"
+                                    />
+                                </svg>
+                                Continue Shopping
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Order Summary -->
+                    <div class="lg:w-1/3">
+                        <div
+                            class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 sticky top-6"
+                        >
+                            <h2 class="text-xl font-bold mb-6">
+                                Order Summary
+                            </h2>
+
+                            <!-- Subtotal -->
+                            <div class="flex justify-between mb-4">
+                                <span class="text-gray-600 dark:text-gray-400"
+                                    >Subtotal (4 items)</span
+                                >
+                                <span class="font-medium">$154.96</span>
+                            </div>
+
+                            <!-- Shipping -->
+                            <div class="mb-6">
+                                <h3
+                                    class="text-gray-600 dark:text-gray-400 mb-3"
+                                >
+                                    Shipping
+                                </h3>
+                                <div class="space-y-2">
+                                    <div class="flex items-center">
+                                        <input
+                                            type="radio"
+                                            id="shipping-standard"
+                                            name="shipping"
+                                            value="standard"
+                                            checked
+                                            class="h-4 w-4 text-primary-light dark:text-primary-dark"
+                                        />
+                                        <label
+                                            for="shipping-standard"
+                                            class="ml-2 text-sm"
+                                            >Standard Shipping (3-5 business
+                                            days) - $4.99</label
+                                        >
+                                    </div>
+                                    <div class="flex items-center">
+                                        <input
+                                            type="radio"
+                                            id="shipping-express"
+                                            name="shipping"
+                                            value="express"
+                                            class="h-4 w-4 text-primary-light dark:text-primary-dark"
+                                        />
+                                        <label
+                                            for="shipping-express"
+                                            class="ml-2 text-sm"
+                                            >Express Shipping (1-2 business
+                                            days) - $9.99</label
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Promo Code -->
+                            <div class="mb-6">
+                                <label
+                                    for="promo"
+                                    class="block text-gray-600 dark:text-gray-400 mb-2"
+                                    >Promo Code</label
+                                >
+                                <div class="flex">
+                                    <input
+                                        type="text"
+                                        id="promo"
+                                        name="promo"
+                                        placeholder="Enter code"
+                                        class="flex-grow px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-l-lg bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark"
+                                    />
+                                    <button
+                                        type="button"
+                                        class="bg-primary-light dark:bg-primary-dark text-white px-4 py-2 rounded-r-lg"
+                                    >
+                                        Apply
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Total -->
+                            <div
+                                class="border-t border-gray-200 dark:border-gray-700 pt-4 mb-6"
+                            >
+                                <div class="flex justify-between mb-2">
+                                    <span
+                                        class="text-gray-600 dark:text-gray-400"
+                                        >Shipping</span
+                                    >
+                                    <span>$4.99</span>
+                                </div>
+                                <div class="flex justify-between mb-2">
+                                    <span
+                                        class="text-gray-600 dark:text-gray-400"
+                                        >Tax</span
+                                    >
+                                    <span>$12.40</span>
+                                </div>
+                                <div
+                                    class="flex justify-between text-lg font-bold mt-4"
+                                >
+                                    <span>Total</span>
+                                    <span>$172.35</span>
+                                </div>
+                            </div>
+
+                            <!-- Checkout Button -->
+                            <a
+                                href="#"
+                                class="block w-full bg-primary-light dark:bg-primary-dark text-white text-center font-medium py-3 rounded-lg hover:bg-opacity-90 transition-colors"
+                            >
+                                Proceed to Checkout
+                            </a>
+
+                            <!-- Payment Methods -->
+                            <div class="mt-6 text-center">
+                                <p
+                                    class="text-sm text-gray-600 dark:text-gray-400 mb-2"
+                                >
+                                    We Accept
+                                </p>
+                                <div class="flex justify-center space-x-2">
+                                    <div
+                                        class="w-10 h-6 bg-gray-200 dark:bg-gray-700 rounded"
+                                    ></div>
+                                    <div
+                                        class="w-10 h-6 bg-gray-200 dark:bg-gray-700 rounded"
+                                    ></div>
+                                    <div
+                                        class="w-10 h-6 bg-gray-200 dark:bg-gray-700 rounded"
+                                    ></div>
+                                    <div
+                                        class="w-10 h-6 bg-gray-200 dark:bg-gray-700 rounded"
+                                    ></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- You May Also Like -->
+        <section class="py-12 bg-gray-50 dark:bg-gray-800">
+            <div class="container mx-auto px-4">
+                <h2 class="text-2xl font-bold mb-8">You May Also Like</h2>
+                <div
+                    class="recommended grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+                >
+                    <!-- Recommendation 1 -->
+                    <div
+                        class="bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden"
+                    >
+                        <img
+                            src="https://images.unsplash.com/photo-1456735190827-d1262f71b8a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Desk Organizer"
+                            class="w-full h-48 object-cover"
+                        />
+                        <div class="p-4">
+                            <h3 class="text-lg font-bold mb-2">
+                                Desk Organizer
+                            </h3>
+                            <p
+                                class="text-gray-600 dark:text-gray-400 text-sm mb-3"
+                            >
+                                Keep your workspace tidy
+                            </p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-lg font-bold">$34.99</span>
+                                <a
+                                    href="#"
+                                    class="text-primary-light dark:text-primary-dark text-sm hover:underline"
+                                    >View</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recommendation 2 -->
+                    <div
+                        class="bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden"
+                    >
+                        <img
+                            src="https://images.unsplash.com/photo-1531592937781-344ad608fabf?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Colored Pencil Set"
+                            class="w-full h-48 object-cover"
+                        />
+                        <div class="p-4">
+                            <h3 class="text-lg font-bold mb-2">
+                                Colored Pencil Set
+                            </h3>
+                            <p
+                                class="text-gray-600 dark:text-gray-400 text-sm mb-3"
+                            >
+                                24 vibrant colors
+                            </p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-lg font-bold">$19.99</span>
+                                <a
+                                    href="#"
+                                    class="text-primary-light dark:text-primary-dark text-sm hover:underline"
+                                    >View</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recommendation 3 -->
+                    <div
+                        class="bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden"
+                    >
+                        <img
+                            src="https://images.unsplash.com/photo-1554103210-26d928978fb5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Sticky Notes Set"
+                            class="w-full h-48 object-cover"
+                        />
+                        <div class="p-4">
+                            <h3 class="text-lg font-bold mb-2">
+                                Sticky Notes Set
+                            </h3>
+                            <p
+                                class="text-gray-600 dark:text-gray-400 text-sm mb-3"
+                            >
+                                Colorful sticky notes
+                            </p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-lg font-bold">$12.99</span>
+                                <a
+                                    href="#"
+                                    class="text-primary-light dark:text-primary-dark text-sm hover:underline"
+                                    >View</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recommendation 4 -->
+                    <div
+                        class="bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden"
+                    >
+                        <img
+                            src="https://images.unsplash.com/photo-1519327232521-1ea2c736d34d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Leather Journal"
+                            class="w-full h-48 object-cover"
+                        />
+                        <div class="p-4">
+                            <h3 class="text-lg font-bold mb-2">
+                                Leather Journal
+                            </h3>
+                            <p
+                                class="text-gray-600 dark:text-gray-400 text-sm mb-3"
+                            >
+                                Handcrafted leather
+                            </p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-lg font-bold">$39.99</span>
+                                <a
+                                    href="#"
+                                    class="text-primary-light dark:text-primary-dark text-sm hover:underline"
+                                    >View</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer
+            class="bg-gray-100 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 py-8"
+        >
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">PaperCraft</h3>
+                        <p class="text-gray-600 dark:text-gray-400">
+                            Premium stationery for creative minds.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">Shop</h3>
+                        <ul class="space-y-2">
+                            <li>
+                                <a
+                                    href="./products.html"
+                                    class="text-gray-600 dark:text-gray-400 hover:text-primary-light dark:hover:text-primary-dark"
+                                    >Notebooks</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="./products.html"
+                                    class="text-gray-600 dark:text-gray-400 hover:text-primary-light dark:hover:text-primary-dark"
+                                    >Pens & Pencils</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="./products.html"
+                                    class="text-gray-600 dark:text-gray-400 hover:text-primary-light dark:hover:text-primary-dark"
+                                    >Desk Accessories</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="./products.html"
+                                    class="text-gray-600 dark:text-gray-400 hover:text-primary-light dark:hover:text-primary-dark"
+                                    >Planners</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">Company</h3>
+                        <ul class="space-y-2">
+                            <li>
+                                <a
+                                    href="./about.html"
+                                    class="text-gray-600 dark:text-gray-400 hover:text-primary-light dark:hover:text-primary-dark"
+                                    >About Us</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="./contact.html"
+                                    class="text-gray-600 dark:text-gray-400 hover:text-primary-light dark:hover:text-primary-dark"
+                                    >Contact</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-gray-600 dark:text-gray-400 hover:text-primary-light dark:hover:text-primary-dark"
+                                    >Shipping</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-gray-600 dark:text-gray-400 hover:text-primary-light dark:hover:text-primary-dark"
+                                    >Returns</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">Connect</h3>
+                        <ul class="space-y-2">
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-gray-600 dark:text-gray-400 hover:text-primary-light dark:hover:text-primary-dark"
+                                    >Instagram</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-gray-600 dark:text-gray-400 hover:text-primary-light dark:hover:text-primary-dark"
+                                    >Twitter</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-gray-600 dark:text-gray-400 hover:text-primary-light dark:hover:text-primary-dark"
+                                    >Facebook</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-gray-600 dark:text-gray-400 hover:text-primary-light dark:hover:text-primary-dark"
+                                    >Pinterest</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div
+                    class="border-t border-gray-200 dark:border-gray-700 mt-8 pt-8 text-center text-gray-600 dark:text-gray-400"
+                >
+                    <p>&copy; 2025 PaperCraft. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
